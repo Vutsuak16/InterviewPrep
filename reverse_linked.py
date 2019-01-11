@@ -1,0 +1,81 @@
+class Node:
+
+	def __init__(self,value):
+
+		self.value = value
+		self.next = None
+
+class SingleList:
+
+	def __init__(self):
+
+		self.head = None
+
+	def printlist(self):
+
+		start = self.head
+
+		while start is not None:
+
+			print(start.value)
+			start = start.next
+		
+		print()
+		print()
+
+	def insert_at_end(self, value):
+
+		start = self.head
+
+		while start.next is not None:
+
+			start = start.next
+		
+		start.next = Node(value)
+
+
+	def reverse(self):
+
+		prev = None
+		current = self.head
+
+		while current is not None:
+
+			next = current.next
+			current.next = prev
+			prev =current
+			current = next
+
+		self.head = prev
+
+
+
+		
+
+list1 = SingleList()
+
+list1.head = Node("One")
+
+e2 = Node("Two")
+e3 = Node("Three")
+e4 = Node("Four")
+e5 = Node("Five")
+
+list1.head.next = e2
+e2.next = e3
+e3.next = e4
+e4.next = e5
+
+
+
+
+list1.insert_at_end("Six")
+
+list1.printlist()
+
+
+list1.reverse()
+
+list1.printlist()
+
+
