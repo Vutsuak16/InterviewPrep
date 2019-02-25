@@ -26,7 +26,6 @@ class SingleList:
 		while curr.next is not None:
 
 			curr = curr.next
-
 		curr.next = node
 
 		return

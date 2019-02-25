@@ -87,8 +87,8 @@ class SingleList:
 		while curr is not None:
 
 			if loc.get(curr.value):
-
 				prev.next = curr.next
+			
 			else:
 				loc[curr.value] = 1
 				prev = curr
